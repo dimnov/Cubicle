@@ -1,5 +1,5 @@
 <main>
-  {{#each cubeData}}
+  {{#with cubeData}}
     <h1>{{name}}</h1>
     <img class="cube" src="{{imageUrl}}" />
     <div class="details">
@@ -8,5 +8,5 @@
       <p><span>Difficulty level:</span> {{difficultyLevel}}</p>
       <a class="btn" href="/">Back</a>
     </div>
-  {{/each}}
+  {{/with}}
 </main>

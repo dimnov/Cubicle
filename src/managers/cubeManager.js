@@ -19,10 +19,8 @@ exports.getAll = (search, from, to) => {
   return result;
 }
 
-exports.getOne = (cubeId) => {
-  const cubeIndex = cubes.indexOf(cube => String(cube.id) === String(cubeId));
-  return cubes.slice(cubeIndex, 1);
-}
+exports.getOne = (cubeId) => cubes.find(cube => String(cube.id) === String(cubeId));
+
 
 exports.create = (cubeData) => {
   cubes.push({

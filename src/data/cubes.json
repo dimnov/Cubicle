@@ -1,1 +1,18 @@
-{ "cubes": [] }
+{
+  "cubes": [
+    {
+      "id": "123",
+      "name": "123",
+      "description": "Nice cube!",
+      "imageUrl": "https://m.media-amazon.com/images/I/61fB-s4DPVS._AC_UF1000,1000_QL80_.jpg",
+      "difficultyLevel": 1
+    },
+    {
+      "id": "1234",
+      "name": "Cube",
+      "description": "Very nice cube!",
+      "imageUrl": "https://media-www.partycity.ca/product/seasonal-gardening/party-city-everyday/party-city-fun/8420017/puzzle-cubes-6ct-59581f69-186d-4ae5-b3b2-af319255ebc2.png",
+      "difficultyLevel": 3
+    }
+  ]
+}

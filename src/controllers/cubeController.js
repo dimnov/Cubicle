@@ -1,19 +1,25 @@
+const cubeManager = require('../managers/cubeManager.js');
 const router = require('express').Router();
-const { cubes } = require('../config/database.json');
 
 router.get('/create', (req, res) => {
+  console.log(cubeManager.getAll());
   res.render('create');
 });
 
 router.post('/create', (req, res) => {
-  const cube = {
-    name: req.body.name,
-    description: req.body.description,
-    imageUrl: req.body.imageUrl,
-    difficultyLevel: req.body.difficultyLevel,
-  }
+  const {
+    name,
+    description,
+    imageUrl,
+    difficultyLevel,
+  } = req.body;
 
-  console.log(cube)
+  cubeManager.create({
+    name,
+    description,
+    imageUrl,
+    difficultyLevel: Number(difficultyLevel),
+  });
   res.redirect('/');
 });
 

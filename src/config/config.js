@@ -1,6 +1,3 @@
-module.exports = {
-    development: {
-        port: process.env.PORT || 3000
-    },
-    production: {}
-};
+const PORT = 5000;
+
+module.exports = PORT;

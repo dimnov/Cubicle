@@ -12,4 +12,8 @@ router.get('/about', (req, res) => {
   res.render('about');
 });
 
+// router.get('*', (req, res, next) => {
+//   res.render('404');
+// });
+
 module.exports = router;

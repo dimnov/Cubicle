@@ -1,4 +1,4 @@
-const { getAll } = require('../managers/cubeManager.js');
+const { getAll, getOne } = require('../managers/cubeManager.js');
 
 const router = require('express').Router();
 

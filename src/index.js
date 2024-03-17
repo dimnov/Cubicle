@@ -1,20 +1,14 @@
 const express = require('express');
-const handlebars = require('express-handlebars');
+const app = express();
+
+const expressConfig = require('./config/express.js');
+const handlebarsConfig = require('./config/handlebars.js');
 
 const PORT = require('./config/config');
 
-const app = express();
+expressConfig(app);
+handlebarsConfig(app);
 
-app.use(express.static('src/public'));
 
-app.engine('hbs', handlebars.engine({
-  extname: 'hbs',
-}));
-app.set('view engine', 'hbs');
-app.set('views', 'src/views');
-
-app.get('/', (req, res) => {
-  res.render('index');
-});
 
 app.listen(PORT, console.log(`Listen on port ${PORT}...`));

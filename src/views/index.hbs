@@ -1,12 +1,19 @@
 <main>
   <h1>Browser</h1>
   <form action="/" method="get">
-    <input type="text" class="search" name="search" placeholder="Search..." />
+    <input
+      type="text"
+      class="search"
+      name="search"
+      placeholder="Search..."
+      value="{{search}}"
+    />
     <input
       type="number"
       name="from"
       class="difficulty"
       placeholder="Difficulty from..."
+      value="{{from}}"
     />
     <span>-</span>
     <input
@@ -14,13 +21,14 @@
       name="to"
       class="difficulty"
       placeholder="Difficulty to..."
+      value="{{to}}"
     />
     <input type="submit" value="search" />
   </form>
   {{#if cubes}}
     {{#each cubes}}
       <div class="cube">
-        <img class="cube" src={{imageUrl}} />
+        <img class="cube" src="{{imageUrl}}" />
         <p class="name">{{name}}</p>
         <p><span>Difficulty level:</span> {{difficultyLevel}}</p>
         <a class="btn" href="/cubes/details/{{id}}">Details</a>

@@ -7,8 +7,7 @@ router.get('/create', (req, res) => {
 });
 
 router.get('/details/:id', (req, res) => {
-  const cubeId = req.params.id;
-  const cubeData = cubeManager.getOne(cubeId);
+  const cubeData = cubeManager.getOne(req.params.id);
 
   res.render('details', { cubeData });
 });

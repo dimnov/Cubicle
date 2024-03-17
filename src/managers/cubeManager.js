@@ -1,5 +1,5 @@
 const uniqid = require('uniqid');
-const cubes = [];
+const { cubes } = require('../data/cubes.json');
 
 exports.getAll = () => {
   return cubes.slice();

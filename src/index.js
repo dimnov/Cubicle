@@ -5,6 +5,8 @@ const PORT = require('./config/config');
 
 const app = express();
 
+app.use(express.static('src/public'));
+
 app.engine('hbs', handlebars.engine({
   extname: 'hbs',
 }));

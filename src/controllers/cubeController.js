@@ -5,12 +5,6 @@ router.get('/create', (req, res) => {
   res.render('create');
 });
 
-router.get('/details/:id', (req, res) => {
-  const cubeData = cubeManager.getOne(req.params.id);
-
-  res.render('details', { cubeData });
-});
-
 router.post('/create', (req, res) => {
   const {
     name,
@@ -26,6 +20,11 @@ router.post('/create', (req, res) => {
     difficultyLevel: Number(difficultyLevel),
   });
   res.redirect('/');
+});
+
+router.get('/details/:id', (req, res) => {
+  const cubeData = cubeManager.getOne(req.params.id);
+  res.render('details', { cubeData });
 });
 
 module.exports = router;

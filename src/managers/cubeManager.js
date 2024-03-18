@@ -1,5 +1,6 @@
 const uniqid = require('uniqid');
 const { cubes } = require('../data/cubes.json');
+const Cube = require('../models/Cube.js');
 
 exports.getAll = (search, from, to) => {
   let result = cubes.slice();
@@ -9,11 +10,11 @@ exports.getAll = (search, from, to) => {
   }
 
   if (from) {
-    result = result.filter(cube => cube.difficultyLevel >= Number(from));
+    result = result.filter(cube => Number(cube.difficultyLevel) >= Number(from));
   }
 
   if (to) {
-    result = result.filter(cube => cube.difficultyLevel <= Number(to));
+    result = result.filter(cube => Number(cube.difficultyLevel) <= Number(to));
   }
 
   return result;

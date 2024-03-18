@@ -22,10 +22,8 @@ exports.getAll = (search, from, to) => {
 
 exports.getOne = (cubeId) => cubes.find(cube => String(cube.id) === String(cubeId));
 
-
-exports.create = (cubeData) => {
-  cubes.push({
-    id: uniqid(),
-    ...cubeData,
-  });
+exports.create = async (cubeData) => {
+  const cube = new Cube(cubeData);
+  await cube.save();
+  return cube;
 }

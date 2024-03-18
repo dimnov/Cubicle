@@ -17,9 +17,8 @@ router.post('/create', async (req, res) => {
     description,
     imageUrl,
   });
+
   res.redirect('/');
 });
-
-
 
 module.exports = router;

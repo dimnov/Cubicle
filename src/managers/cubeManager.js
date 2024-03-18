@@ -20,7 +20,7 @@ exports.getAll = (search, from, to) => {
   return result;
 }
 
-exports.getOne = (cubeId) => cubes.find(cube => String(cube.id) === String(cubeId));
+exports.getOne = (cubeId) => Cube.findById(cubeId);
 
 exports.create = async (cubeData) => {
   const cube = new Cube(cubeData);

@@ -22,8 +22,8 @@ router.post('/create', async (req, res) => {
   res.redirect('/');
 });
 
-router.get('/details/:id', (req, res) => {
-  const cubeData = cubeManager.getOne(req.params.id);
+router.get('/details/:id', async (req, res) => {
+  const cubeData = await cubeManager.getOne(req.params.id).lean();
   res.render('details', { cubeData });
 });
 

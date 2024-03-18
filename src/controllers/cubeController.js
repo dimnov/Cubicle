@@ -32,7 +32,9 @@ router.get('/:id/accessory', async (req, res) => {
   const cube = await cubeManager.getOne(req.params.id).lean();
   const accessories = await accessoryManager.getAll().lean();
 
-  res.render('accessory/attach', { cube, accessories });
+  const hasAccessories = accessories.length > 0;
+
+  res.render('accessory/attach', { cube, accessories, hasAccessories });
 });
 
 module.exports = router;

@@ -1,8 +1,8 @@
 <main>
   <h1>Attach a new accessory</h1>
   <div class="form">
-    <h2>{{cube.name}}</h2>
-    <img class="cube" src="{{cube.imageUrl}}" />
+    <h2>{{cubeData.name}}</h2>
+    <img class="cube" src="{{cubeData.imageUrl}}" />
     {{#if hasAccessories}}
       <form method="post">
         <label for="accessory">Accessories</label>
@@ -17,6 +17,6 @@
       <h3 class="italic">This cube has all available accessories so far or there
         is no available at all...</h3>
     {{/if}}
-    <a class="btn" href="#">Back</a>
+    <a class="btn" href="/cubes/details/{{cubeData._id}}">Back</a>
   </div>
 </main>

@@ -6,4 +6,4 @@ function expressConfig(app) {
     app.use(express.urlencoded({ extended: false }));
 }
 
-module.exports = expressConfig; 
+module.exports = expressConfig;

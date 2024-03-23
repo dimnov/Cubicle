@@ -1,3 +1,2 @@
-const PORT = 5000;
-
-module.exports = PORT;
+exports.PORT = 5000;
+exports.SECRET = 'superSecret123';

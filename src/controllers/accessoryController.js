@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const accessoryManager = require('../managers/accessoryManager.js');
+const accessoryManager = require('../managers/accessoryManager');
 
 router.get('/create', (req, res) => {
   res.render('accessories/create');

@@ -1,4 +1,4 @@
-const Cube = require('../models/Cube.js');
+const Cube = require('../models/Cube');
 
 exports.getAll = (search, from, to) => {
   let result = Cube.find().lean();

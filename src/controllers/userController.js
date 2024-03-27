@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 const userManager = require('../managers/userManager');
+const { extractErrorMessages } = require('../utils/errorHelpers');
 
 router.get('/register', (req, res) => {
   res.render('users/register');
@@ -9,9 +10,15 @@ router.get('/register', (req, res) => {
 router.post('/register', async (req, res) => {
   const { username, password, repeatPassword } = req.body;
 
-  await userManager.register({ username, password, repeatPassword });
+  try {
+    await userManager.register({ username, password, repeatPassword });
 
-  res.redirect('/users/login');
+    res.redirect('/users/login');
+  } catch (error) {
+    const errorMessages = extractErrorMessages(error);
+    res.render('users/register', { errorMessages });
+  }
+
 });
 
 router.get('/login', (req, res) => {

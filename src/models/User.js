@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -10,8 +10,8 @@ const userSchema = new mongoose.Schema({
       validator: function (value) {
         return /^[A-Za-z0-9]+$/.test(value);
       },
-      message: 'Password must contain only A-Z, a-z or 0-9 characters'
-    }
+      message: 'Password must contain only A-Z, a-z or 0-9 characters',
+    },
   },
   password: {
     type: String,
@@ -19,18 +19,17 @@ const userSchema = new mongoose.Schema({
     validate: {
       validator: function (value) {
         return /^[A-Za-z0-9]+$/.test(value);
-      }
+      },
     },
     minLength: [8, 'Password is too short'],
   },
 });
 
-userSchema.virtual('repeatPassword')
-  .set(function (value) {
-    if (value !== this.password) {
-      throw new Error('Password missmatch!');
-    }
-  });
+userSchema.virtual('repeatPassword').set(function (value) {
+  if (value !== this.password) {
+    throw new Error('Password missmatch!');
+  }
+});
 
 userSchema.pre('save', async function () {
   if (this.password) {

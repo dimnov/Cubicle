@@ -4,8 +4,8 @@ const expressConfig = require('./config/express');
 const handlebarsConfig = require('./config/handlebars');
 const dbConnect = require('./config/dbConfig');
 
-const { PORT } = require('./config/config');
 const routes = require('./routes');
+const { PORT } = require('./config/config');
 
 const app = express();
 

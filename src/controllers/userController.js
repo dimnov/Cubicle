@@ -18,7 +18,6 @@ router.post('/register', async (req, res) => {
     const errorMessages = extractErrorMessages(error);
     res.render('users/register', { errorMessages });
   }
-
 });
 
 router.get('/login', (req, res) => {

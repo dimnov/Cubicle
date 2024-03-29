@@ -6,11 +6,7 @@ router.get('/create', (req, res) => {
 });
 
 router.post('/create', async (req, res) => {
-  const {
-    name,
-    description,
-    imageUrl,
-  } = req.body;
+  const { name, description, imageUrl } = req.body;
 
   await accessoryManager.create({
     name,
